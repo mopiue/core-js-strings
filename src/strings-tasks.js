@@ -20,9 +20,7 @@
  *   getStringLength(undefined) => 0
  */
 function getStringLength(value) {
-  return typeof value === 'string'
-    ? value.length
-    : 0
+  return typeof value === 'string' ? value.length : 0;
 }
 
 /**
@@ -40,7 +38,7 @@ function getStringLength(value) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  return typeof value === 'string' || value instanceof String
+  return typeof value === 'string' || value instanceof String;
 }
 
 /**
@@ -56,7 +54,7 @@ function isString(value) {
  *   concatenateStrings('', 'bb') => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  return value1 + value2
+  return value1 + value2;
 }
 
 /**
@@ -71,7 +69,7 @@ function concatenateStrings(value1, value2) {
  *   getFirstChar('') => ''
  */
 function getFirstChar(value) {
-  return value.charAt(0)
+  return value.charAt(0);
 }
 
 /**
@@ -86,7 +84,7 @@ function getFirstChar(value) {
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-  return value.trim()
+  return value.trim();
 }
 
 /**
@@ -101,7 +99,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
 function removeLeadingWhitespaces(value) {
-  return value.trimStart()
+  return value.trimStart();
 }
 
 /**
@@ -116,7 +114,7 @@ function removeLeadingWhitespaces(value) {
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
 function removeTrailingWhitespaces(value) {
-  return value.trimEnd()
+  return value.trimEnd();
 }
 
 /**
@@ -133,7 +131,9 @@ function removeTrailingWhitespaces(value) {
  *   repeatString('abc', -2) => ''
  */
 function repeatString(str, times) {
-  return str.repeat(times)
+  if (times > 0) return str.repeat(times);
+
+  return '';
 }
 
 /**
@@ -149,7 +149,7 @@ function repeatString(str, times) {
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
 function removeFirstOccurrences(str, value) {
-  return str.replace(value, '')
+  return str.replace(value, '');
 }
 
 /**
@@ -185,9 +185,9 @@ function removeLastOccurrences(str, value) {
  *   sumOfCodes() => 0
  */
 function sumOfCodes(str) {
-  return typeof str === 'string' || str instanceof String
-    ? str.split('').reduce((acc, curr) => acc + curr.charCodeAt(0), 0)
-    : 0
+  if (typeof str === 'string' || str instanceof String)
+    return str.split('').reduce((acc, curr) => acc + curr.charCodeAt(0), 0);
+  return 0;
 }
 
 /**
@@ -202,7 +202,7 @@ function sumOfCodes(str) {
  *   startsWith('Hello World', 'Hello') => true
  */
 function startsWith(str, substr) {
-  return str.startsWith(substr)
+  return str.startsWith(substr);
 }
 
 /**
@@ -217,7 +217,7 @@ function startsWith(str, substr) {
  *   endsWith('Hello World', 'Hello') => false
  */
 function endsWith(str, substr) {
-  return str.endsWith(substr)
+  return str.endsWith(substr);
 }
 
 /**
@@ -234,7 +234,10 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
+    2,
+    '0'
+  )}`;
 }
 
 /**
@@ -248,7 +251,7 @@ function formatTime(minutes, seconds) {
  *   reverseString('12345') => '54321'
  */
 function reverseString(str) {
-  return str.split('').reverse().join('')
+  return str.split('').reverse().join('');
 }
 
 /**
